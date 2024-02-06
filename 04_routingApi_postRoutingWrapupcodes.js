@@ -11,22 +11,37 @@ client.setEnvironment(region);
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
 
-let body = {}; // Object | WrapupCode
+let bodyArr = [
+  {
+    name: "Sample|Test3",
+  },
+  {
+    name: "Sample|Test4",
+  },
+  {
+    name: "Sample|Test5",
+  },
+];
 
-// Authenticate
+
+
 client
   .loginClientCredentialsGrant(clientId, clientSecret)
   .then(() => {
-    return routingApi.postRoutingWrapupcodes(body);
-  })
-  // Create a wrap-up code
-  .then((data) => {
-    console.log(
-      `postRoutingWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`
-    );
+    let idArr = [];
+    let promises = bodyArr.map((body) => {
+      return routingApi.postRoutingWrapupcodes(body).then((data) => {
+        idArr.push({ id: data.id });
+      });
+    });
+
+    return Promise.all(promises).then(() => {
+      console.log(idArr);
+      return idArr;
+    });
   })
   .catch((err) => {
-    console.log("There was a failure calling postRoutingWrapupcodes");
+    console.log("There was a failure authenticating the client.");
     console.error(err);
   });
 

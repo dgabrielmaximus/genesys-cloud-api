@@ -11,28 +11,27 @@ client.setEnvironment(region);
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
 
-let bodyArr = [
-  { name: 'Search | Fee Quote' },
-  { name: 'Search | Small Claims Court' },
-  { name: 'Search | Certified Product' }
-]
+let queueId = "c835ebd4-ec97-4b3f-949f-e29781a80b09"; // String | Queue ID
+let body = [
 
+]; // Object | List of wrapup codes
+
+// Create a wrap-up code
 client
   .loginClientCredentialsGrant(clientId, clientSecret)
   .then(() => {
-    let idArr = [];
-    let promises = bodyArr.map((body) => {
-      return routingApi.postRoutingWrapupcodes(body).then((data) => {
-        idArr.push({ id: data.id });
-      });
-    });
-
-    return Promise.all(promises).then(() => {
-      console.log(idArr);
-      return idArr;
-    });
+    return routingApi.postRoutingQueueWrapupcodes(queueId, body);
+  })
+  .then((data) => {
+    console.log(
+      `postRoutingQueueWrapupcodes success! data: ${JSON.stringify(
+        data,
+        null,
+        2
+      )}`
+    );
   })
   .catch((err) => {
-    console.log("There was a failure authenticating the client.");
+    console.log("There was a failure calling postRoutingQueueWrapupcodes");
     console.error(err);
   });

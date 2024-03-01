@@ -11,7 +11,7 @@ client.setEnvironment(region);
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
 
-const idsArray = [];
+const dataArray = [];
 
 // let idObj = {}
 let idObj = {
@@ -27,13 +27,21 @@ const getIds = (arr) => {
 
       idObj = { id: arr[i].id, name: arr[i].name };
 
-      // idsArray.push(arr[i].id);
+      // dataArray.push(arr[i].id);
       // console.log(nestedArr)
-      idsArray.push(idObj);
+      dataArray.push(idObj);
     }
   }
-  console.log(idsArray);
-  return idsArray;
+  console.log(dataArray);
+  return dataArray;
+};
+
+const getNames = (arr) => {
+  arr.map((item) => {
+    dataArray.push(item.name);
+  });
+  console.log(dataArray);
+  return dataArray;
 };
 
 let opts = {
@@ -52,7 +60,7 @@ client
     return routingApi.getRoutingWrapupcodes(opts);
   })
   .then((data) => {
-    getIds(data.entities);
+    getNames(data.entities);
   })
   .catch((err) => {
     console.log("There was a failure calling patchUsersBulk");

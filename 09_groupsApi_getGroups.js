@@ -1,17 +1,19 @@
-import { platformClient, client, clientId, clientSecret } from "./config.js";
+import { platformClient, client, orgOauth } from "./config.js";
+
+// Choose the organization: DEV, SBC, SBCICC, SDO, ODB
+const { clientId, clientSecret } = orgOauth.SBCICC;
+
 const groupsApi = new platformClient.GroupsApi();
 
-const groupNamesArr = [];
-
-const groupIds = [];
+const dataArray = [];
 
 const getIds = (arr) => {
   arr.map((object) => {
-    if (object.name.includes("Gen - ")) {
-      groupIds.push({ id: object.id, name: object.name });
+    if (object.name.includes("TRN")) {
+      dataArray.push({ id: object.id, name: object.name });
     }
   });
-  return groupIds;
+  return dataArray;
 };
 
 let opts = {

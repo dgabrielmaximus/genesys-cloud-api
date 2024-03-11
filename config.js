@@ -16,6 +16,10 @@ const orgOauth = {
     clientId: process.env.CLIENT_ID_SBCICC,
     clientSecret: process.env.CLIENT_SECRET_SBCICC,
   },
+  ODB: {
+    clientId: process.env.CLIENT_ID_ODB,
+    clientSecret: process.env.CLIENT_SECRET_ODB,
+  },
 };
 
 export { platformClient, client, orgOauth };

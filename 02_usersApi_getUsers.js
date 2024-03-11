@@ -1,4 +1,7 @@
-import { platformClient, client, clientId, clientSecret } from "./config.js";
+import { platformClient, client, orgOauth } from "./config.js";
+
+// Choose the organization: DEV, SBC, SBCICC, SDO, ODB
+const { clientId, clientSecret } = orgOauth.SBCICC;
 
 // Create API instance
 const usersApi = new platformClient.UsersApi();
@@ -8,10 +11,13 @@ const idsArray = [];
 const getIds = (arr) => {
   let x;
   for (let i = 0; i < arr.length; i++) {
-    idsArray.push(arr[i].name);
-    //   if (arr[i].acdAutoAnswer === false) {
-    //     idsArray.push(arr[i].id);
-    //   }
+    // idsArray.push({name: arr[i].name, email: arr[i].email});
+
+    // Find autoanswer
+    if (arr[i].acdAutoAnswer) {
+        idsArray.push({id: arr[i].id, acdAutoAnswer: false});
+      }
+
     // arr[i].groups.find((elem) => {
     //   // console.log(elem.id === "2e21d087-5ebc-4fca-b92b-37e5ff50b51a");
     //   if (
@@ -43,7 +49,7 @@ let opts = {
   sortOrder: "ASC", // String | Ascending or descending sort order
   expand: ["skills", "profileSkills"], // [String] | Which fields, if any, to expand
   // "integrationPresenceSource": "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
-  state: "active", // String | Only list users of this state
+  // state: "active", // String | Only list users of this state
 };
 
 client

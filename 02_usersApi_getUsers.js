@@ -42,7 +42,7 @@ const getIds = (arr) => {
 };
 
 let opts = {
-  pageSize: 50, // Number | Page size
+  pageSize: 500, // Number | Page size
   pageNumber: 1, // Number | Page number
   // "id": ["id_example"], // [String] | A list of user IDs to fetch by bulk
   // "jabberId": ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the id parameter)

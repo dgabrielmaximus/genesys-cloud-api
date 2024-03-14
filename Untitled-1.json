@@ -1,0 +1,163 @@
+[
+  {
+    "id": "6a01949c-208c-4f60-8277-540b44ff61ad",
+    "name": "Deirdre Clancy WebRTC PHONE [5b42824]",
+    "dateCreated": "2024-03-06T23:18:33.685Z",
+    "dateModified": "2024-03-06T23:18:33.685Z",
+    "state": "active",
+    "site": {
+      "id": "42c61149-6210-4a19-a7af-15fedbced0c3",
+      "selfUri": "/api/v2/telephony/providers/edges/sites/42c61149-6210-4a19-a7af-15fedbced0c3"
+    },
+    "phoneBaseSettings": {
+      "id": "5f9c1e0d-cadb-4792-b982-9a3843ac0b9c",
+      "selfUri": "/api/v2/telephony/providers/edges/phonebasesettings/5f9c1e0d-cadb-4792-b982-9a3843ac0b9c"
+    },
+    "lineBaseSettings": {
+      "id": "0a74cebd-093c-4679-97d0-c8a71acfa842",
+      "name": "WebRTC Base Settings_1",
+      "selfUri": "/api/v2/telephony/providers/edges/linebasesettings/0a74cebd-093c-4679-97d0-c8a71acfa842"
+    },
+    "phoneMetaBase": {
+      "id": "inin_webrtc_softphone.json",
+      "name": "PureCloud WebRTC Phone"
+    },
+    "lines": [
+      {
+        "id": "af097bd2-38bd-4713-95f5-570f2a98cc98",
+        "name": "65e8f9c73453932d53c7bfb5+maximuscanada-sbc-internalcc.orgspan.com",
+        "state": "active",
+        "properties": {
+          "station_label": {
+            "type": "string",
+            "value": {
+              "default": "PureCloud WebRTC Softphone"
+            }
+          },
+          "station_numCallAppearances": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "value": {
+              "default": 100
+            }
+          },
+          "station_autoconference_enabled": {
+            "type": "boolean",
+            "value": {
+              "default": false
+            }
+          },
+          "station_autoconference_pin": {
+            "type": "string",
+            "pattern": "(^$|^[0-9]{4,10}$)",
+            "value": {
+              "default": ""
+            }
+          },
+          "station_language": {
+            "type": "string",
+            "enum": [
+              "en-AU",
+              "pt-BR",
+              "fr-CA",
+              "zh-CN",
+              "de-DE",
+              "es-ES",
+              "fr-FR",
+              "en-GB",
+              "it-IT",
+              "nl-NL",
+              "en-US",
+              "es-US"
+            ],
+            "value": {
+              "default": "en-US"
+            }
+          },
+          "station_persistent_webrtc_enabled": {
+            "type": "boolean",
+            "value": {
+              "default": true
+            }
+          },
+          "station_persistent_timeout": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 604800,
+            "value": {
+              "default": 36000
+            }
+          },
+          "station_force_turn": {
+            "type": "boolean",
+            "value": {
+              "default": false
+            }
+          },
+          "station_require_webrtc_media_helper": {
+            "type": "boolean",
+            "value": {
+              "default": false
+            }
+          },
+          "station_webrtc_media_idleTimeout": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 10,
+            "value": {
+              "default": 10
+            }
+          },
+          "station_webrtc_media_recovery": {
+            "type": "boolean",
+            "value": {
+              "default": false
+            }
+          }
+        },
+        "template": {
+          "id": "0a74cebd-093c-4679-97d0-c8a71acfa842"
+        },
+        "site": {
+          "id": "42c61149-6210-4a19-a7af-15fedbced0c3",
+          "selfUri": "/api/v2/telephony/providers/edges/sites/42c61149-6210-4a19-a7af-15fedbced0c3"
+        },
+        "lineBaseSettings": {
+          "id": "0a74cebd-093c-4679-97d0-c8a71acfa842",
+          "name": "WebRTC Base Settings_1",
+          "selfUri": "/api/v2/telephony/providers/edges/linebasesettings/0a74cebd-093c-4679-97d0-c8a71acfa842"
+        },
+        "loggedInUser": {
+          "id": "e7eb44b1-bd8a-460d-98b5-acd0d5bb1756",
+          "name": "Deirdre Clancy",
+          "selfUri": "/api/v2/users/e7eb44b1-bd8a-460d-98b5-acd0d5bb1756"
+        },
+        "defaultForUser": {
+          "id": "e7eb44b1-bd8a-460d-98b5-acd0d5bb1756",
+          "name": "Deirdre Clancy",
+          "selfUri": "/api/v2/users/e7eb44b1-bd8a-460d-98b5-acd0d5bb1756"
+        },
+        "selfUri": "/api/v2/telephony/providers/edges/lines/af097bd2-38bd-4713-95f5-570f2a98cc98"
+      }
+    ],
+    "properties": {},
+    "capabilities": {
+      "provisions": false,
+      "registers": false,
+      "dualRegisters": false,
+      "hardwareIdType": "mac",
+      "allowReboot": false,
+      "noRebalance": false,
+      "noCloudProvisioning": false,
+      "mediaCodecs": ["audio/opus"],
+      "cdm": true
+    },
+    "webRtcUser": {
+      "id": "e7eb44b1-bd8a-460d-98b5-acd0d5bb1756",
+      "name": "Deirdre Clancy",
+      "selfUri": "/api/v2/users/e7eb44b1-bd8a-460d-98b5-acd0d5bb1756"
+    },
+    "selfUri": "/api/v2/telephony/providers/edges/phones/6a01949c-208c-4f60-8277-540b44ff61ad"
+  }
+]

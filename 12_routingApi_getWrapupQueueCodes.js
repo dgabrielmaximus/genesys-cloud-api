@@ -1,4 +1,7 @@
-import { platformClient, client, clientId, clientSecret } from "./config.js";
+import { platformClient, client, orgOauth } from "./config.js";
+
+// Choose the organization: DEV, SBC, SBCICC, SDO, ODB
+const { clientId, clientSecret } = orgOauth.SBCICC;
 
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
@@ -25,7 +28,8 @@ const getIds = (arr) => {
   //   }
   // }
   arr.map((item) => {
-    dataArray.push({ id: item.id });
+    dataArray.push(item.id);
+    // dataArray.push({ id: item.id });
   });
   console.log(dataArray);
   return dataArray;
@@ -40,7 +44,7 @@ const getNames = (arr) => {
   // return dataArray;
 };
 
-let queueId = "e8593b94-8ad6-4479-939e-c9ebb1d206f5";
+let queueId = "700ea890-efe1-4eec-a40f-fd88bd459d7b";
 
 let opts = {
   pageSize: 500, // Number | Page size

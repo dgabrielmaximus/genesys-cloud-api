@@ -9,7 +9,7 @@ const dataArray = [];
 
 const getIds = (arr) => {
   arr.map((object) => {
-    if (object.name.includes("TRN")) {
+    if (object.name.includes("SBC ICC - PM")) {
       dataArray.push({ id: object.id, name: object.name });
     }
   });

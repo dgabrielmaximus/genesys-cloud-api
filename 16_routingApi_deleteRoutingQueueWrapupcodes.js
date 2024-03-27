@@ -6,10 +6,9 @@ const { clientId, clientSecret } = orgOauth.SBCICC;
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
 
+let queueId = "700ea890-efe1-4eec-a40f-fd88bd459d7b";
+
 let bodyArr = [
-  '7d75e189-5ea2-462e-bfde-83e24281009e',
-  '0f1ed96f-af6f-498d-b780-93a3b634b287',
-  'ce677c44-92a4-480a-909f-9f90f5c1392d',
   'f3573386-75d2-4bdd-9876-7c5562f265e4',
   '9af787f3-2bdf-4a3a-a04e-07a3006b88fe',
   '9f633cb2-9f5a-433f-9e05-d3be3433ee5f',
@@ -31,19 +30,14 @@ let bodyArr = [
   'bebdc172-1d65-4cc6-a84c-ae0923880a53',
   '68872213-db39-4df8-95ba-3611e426fcbd',
   '8889ce3b-055c-4724-b4f0-265efa518576',
-  'f5d313f4-ce75-4f5f-a3ae-9f4e20df860b',
-  '72823126-cb07-4aeb-a2ed-c67d91b02532',
-  '11224f41-2522-4dcd-a00f-2d47ca79f771',
-  '3777cd9e-29ba-42f2-a013-7f9a37d7dfc5',
-  '2011faa7-9233-4311-980b-ffde2083da5c',
-  '287a7655-801c-4aad-a06a-1bc7517636eb'
+  '40adba59-462e-4a11-a049-5cc9e917d009'
 ]; // List of wrapup codes
 
   client
   .loginClientCredentialsGrant(clientId, clientSecret)
   .then(() => {
     let promises = bodyArr.map((body) => {
-      return routingApi.deleteRoutingWrapupcode(body)
+      return routingApi.deleteRoutingQueueWrapupcode(queueId, body)
     });
 
     return Promise.all(promises).then(() => {

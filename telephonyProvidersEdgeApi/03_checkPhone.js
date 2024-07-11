@@ -17,14 +17,8 @@ client
     return telephonyApi.getTelephonyProvidersEdgesPhones(opts);
   })
   .then((data) => {
-    let phoneId = data.entities[0].id;
-    console.log("getTelephonyProvidersEdgesPhones returned successfully.");
-    return telephonyApi.postTelephonyProvidersEdgesPhoneReboot(phoneId);
-  })
-  .then((data) => {
-    console.log(data);
-    console.log("postTelephonyProvidersEdgesPhoneReboot returned successfully.");
-    return "Phone has been rebooted."
+    console.log("getTelephonyProvidersEdgesPhones returned successfully.")
+    if (data.entities[0]) return "Phone is active"
   })
   .catch((err) => {
     console.log("There was a failure calling getTelephonyProvidersEdgesPhones");

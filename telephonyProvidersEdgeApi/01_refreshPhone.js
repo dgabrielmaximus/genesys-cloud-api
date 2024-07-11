@@ -37,6 +37,7 @@ client
   })
   .then((data) => {
     console.log("putUserStationAssociatedstationStationId returned successfully.");
+    return "Phone has been refreshed."
   })
   .catch((err) => {
     console.log("There was a failure calling deleteUserStationDefaultstation");

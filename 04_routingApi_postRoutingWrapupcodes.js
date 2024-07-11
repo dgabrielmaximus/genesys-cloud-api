@@ -1,21 +1,21 @@
-const dotenv = require("dotenv");
-dotenv.config();
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
-const region = process.env.REGION; //https://developer.genesys.cloud/platform/api/
+import { platformClient, client, orgOauth } from "./config.js";
 
-const platformClient = require("purecloud-platform-client-v2");
-const client = platformClient.ApiClient.instance;
-client.setEnvironment(region);
+// Choose the organization: DEV, SBC, SBCICC, SDO, ODB
+const { clientId, clientSecret } = orgOauth.SBC;
 
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
 
 let bodyArr = [
-  { name: 'Search | Fee Quote' },
-  { name: 'Search | Small Claims Court' },
-  { name: 'Search | Certified Product' }
-]
+  { name: "WFM | Decline" },
+  { name: "WFM | Sick at 75%" },
+  { name: "WFM | Sick at 100%" },
+  { name: "WFM | Sick with 25% tup" },
+  { name: "WFM | Sick child" },
+  { name: "WFM | Sick spouse" },
+  { name: "WFM | Bereavement" },
+  { name: "WFM | Medical appt" }
+];
 
 client
   .loginClientCredentialsGrant(clientId, clientSecret)

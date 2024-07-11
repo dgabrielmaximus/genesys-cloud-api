@@ -1,12 +1,7 @@
-const dotenv = require("dotenv");
-dotenv.config();
-const clientId = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
-const region = process.env.REGION; //https://developer.genesys.cloud/platform/api/
+import { platformClient, client, orgOauth } from "./config.js";
 
-const platformClient = require("purecloud-platform-client-v2");
-const client = platformClient.ApiClient.instance;
-client.setEnvironment(region);
+// Choose the organization: DEV, SBC, SBCICC, SDO, ODB
+const { clientId, clientSecret } = orgOauth.SBC;
 
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
@@ -21,15 +16,15 @@ let idObj = {
 
 const getIds = (arr) => {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name.includes("BCSC|")) {
+    if (arr[i].name.includes("Product")) {
       // Enable if needs object with id
       // idObj = { id: arr[i].id };
 
-      idObj = { id: arr[i].id, name: arr[i].name };
+      // idObj = { id: arr[i].id };
 
-      // dataArray.push(arr[i].id);
+      dataArray.push(arr[i].id);
       // console.log(nestedArr)
-      dataArray.push(idObj);
+      // dataArray.push(idObj);
     }
   }
   console.log(dataArray);
@@ -60,7 +55,7 @@ client
     return routingApi.getRoutingWrapupcodes(opts);
   })
   .then((data) => {
-    getNames(data.entities);
+    getIds(data.entities);
   })
   .catch((err) => {
     console.log("There was a failure calling patchUsersBulk");

@@ -1,163 +1,676 @@
-[
-  {
-    "id": "6a01949c-208c-4f60-8277-540b44ff61ad",
-    "name": "Deirdre Clancy WebRTC PHONE [5b42824]",
-    "dateCreated": "2024-03-06T23:18:33.685Z",
-    "dateModified": "2024-03-06T23:18:33.685Z",
-    "state": "active",
-    "site": {
-      "id": "42c61149-6210-4a19-a7af-15fedbced0c3",
-      "selfUri": "/api/v2/telephony/providers/edges/sites/42c61149-6210-4a19-a7af-15fedbced0c3"
-    },
-    "phoneBaseSettings": {
-      "id": "5f9c1e0d-cadb-4792-b982-9a3843ac0b9c",
-      "selfUri": "/api/v2/telephony/providers/edges/phonebasesettings/5f9c1e0d-cadb-4792-b982-9a3843ac0b9c"
-    },
-    "lineBaseSettings": {
-      "id": "0a74cebd-093c-4679-97d0-c8a71acfa842",
-      "name": "WebRTC Base Settings_1",
-      "selfUri": "/api/v2/telephony/providers/edges/linebasesettings/0a74cebd-093c-4679-97d0-c8a71acfa842"
-    },
-    "phoneMetaBase": {
-      "id": "inin_webrtc_softphone.json",
-      "name": "PureCloud WebRTC Phone"
-    },
-    "lines": [
-      {
-        "id": "af097bd2-38bd-4713-95f5-570f2a98cc98",
-        "name": "65e8f9c73453932d53c7bfb5+maximuscanada-sbc-internalcc.orgspan.com",
-        "state": "active",
-        "properties": {
-          "station_label": {
-            "type": "string",
-            "value": {
-              "default": "PureCloud WebRTC Softphone"
-            }
-          },
-          "station_numCallAppearances": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 100,
-            "value": {
-              "default": 100
-            }
-          },
-          "station_autoconference_enabled": {
-            "type": "boolean",
-            "value": {
-              "default": false
-            }
-          },
-          "station_autoconference_pin": {
-            "type": "string",
-            "pattern": "(^$|^[0-9]{4,10}$)",
-            "value": {
-              "default": ""
-            }
-          },
-          "station_language": {
-            "type": "string",
-            "enum": [
-              "en-AU",
-              "pt-BR",
-              "fr-CA",
-              "zh-CN",
-              "de-DE",
-              "es-ES",
-              "fr-FR",
-              "en-GB",
-              "it-IT",
-              "nl-NL",
-              "en-US",
-              "es-US"
-            ],
-            "value": {
-              "default": "en-US"
-            }
-          },
-          "station_persistent_webrtc_enabled": {
-            "type": "boolean",
-            "value": {
-              "default": true
-            }
-          },
-          "station_persistent_timeout": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 604800,
-            "value": {
-              "default": 36000
-            }
-          },
-          "station_force_turn": {
-            "type": "boolean",
-            "value": {
-              "default": false
-            }
-          },
-          "station_require_webrtc_media_helper": {
-            "type": "boolean",
-            "value": {
-              "default": false
-            }
-          },
-          "station_webrtc_media_idleTimeout": {
-            "type": "integer",
-            "minimum": 2,
-            "maximum": 10,
-            "value": {
-              "default": 10
-            }
-          },
-          "station_webrtc_media_recovery": {
-            "type": "boolean",
-            "value": {
-              "default": false
-            }
+{
+  "id": "4ce21b8f-d72d-43c6-8771-149b12ff9083",
+  "participants": [
+    {
+      "id": "ac23cac0-f1d1-4269-b272-cb2a99b8cfea",
+      "startTime": "2024-06-26T23:57:09.515Z",
+      "connectedTime": "2024-06-26T23:57:09.528Z",
+      "endTime": "2024-06-27T00:07:53.342Z",
+      "purpose": "customer",
+      "state": "disconnected",
+      "direction": "inbound",
+      "disconnectType": "peer",
+      "held": false,
+      "wrapupRequired": false,
+      "mediaRoles": [
+        "full"
+      ],
+      "queue": {
+        "id": "f14490f9-7e42-4681-8a53-16e495b9e8ac",
+        "selfUri": "/api/v2/routing/queues/f14490f9-7e42-4681-8a53-16e495b9e8ac"
+      },
+      "attributes": {
+        "InteractionType": "webmessaging",
+        "ParticipantID": "ac23cac0-f1d1-4269-b272-cb2a99b8cfea",
+        "ScheduleType": "Open",
+        "ScheduleEvaluated": "SBC_SMS",
+        "SurveyResults": "SurveyName=SBC_SURVEY_MESSAGE|Language=EN|MediaType=webmessaging|Queue=SBC_HD_BCROS_SPGP_WEBMSG|ConversationID=4ce21b8f-d72d-43c6-8771-149b12ff9083|QEnd=0|SurveyStartDTUtc=2024-06-27T00:02:51.312Z| |SurveyEndDTUtc=2024-06-27T00:07:53.261Z|",
+        "Validinputdata": "",
+        "SurveyName": "SBC_SURVEY_MESSAGE",
+        "Call_Report": "| SBC_HD_BCROS_SPGP_WEBMSG| SBC_HD_BCROS_SPGP_WEBMSG_OPEN| SBC_HD_BCROS_SPGP_WEBMSG_QUEUE",
+        "MainTargetAddress": "717e65be-b465-48ba-b31b-14bda4061e91",
+        "QueueName": "SBC_HD_BCROS_SPGP_WEBMSG",
+        "SurveyLanguage": "EN"
+      },
+      "provider": "PureCloud Messaging",
+      "peer": "eb4841b0-76f5-426d-b93b-9b26b0253bca",
+      "toAddress": {
+        "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+        "addressNormalized": "717e65be-b465-48ba-b31b-14bda4061e91",
+        "addressRaw": "717e65be-b465-48ba-b31b-14bda4061e91"
+      },
+      "fromAddress": {
+        "addressNormalized": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf",
+        "addressRaw": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf"
+      },
+      "messages": [
+        {
+          "messageId": "09bc04ca3c0bd4c148611e9483c82816",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/09bc04ca3c0bd4c148611e9483c82816",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:57:09.515Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
           }
         },
-        "template": {
-          "id": "0a74cebd-093c-4679-97d0-c8a71acfa842"
+        {
+          "messageId": "635e29d96d1acd3e0ed62dfe8f9f755f",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/635e29d96d1acd3e0ed62dfe8f9f755f",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:57:43.185Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
         },
-        "site": {
-          "id": "42c61149-6210-4a19-a7af-15fedbced0c3",
-          "selfUri": "/api/v2/telephony/providers/edges/sites/42c61149-6210-4a19-a7af-15fedbced0c3"
+        {
+          "messageId": "e8d1ef856cf3854a0b77c25b8135a316",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/e8d1ef856cf3854a0b77c25b8135a316",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:58:03.983Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
         },
-        "lineBaseSettings": {
-          "id": "0a74cebd-093c-4679-97d0-c8a71acfa842",
-          "name": "WebRTC Base Settings_1",
-          "selfUri": "/api/v2/telephony/providers/edges/linebasesettings/0a74cebd-093c-4679-97d0-c8a71acfa842"
+        {
+          "messageId": "b0b8c15e71d4ec49b7639af8e02af293",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/b0b8c15e71d4ec49b7639af8e02af293",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:58:08.652Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
         },
-        "loggedInUser": {
-          "id": "e7eb44b1-bd8a-460d-98b5-acd0d5bb1756",
-          "name": "Deirdre Clancy",
-          "selfUri": "/api/v2/users/e7eb44b1-bd8a-460d-98b5-acd0d5bb1756"
+        {
+          "messageId": "e28c638ef5c7cef882141fc278e5c090",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/e28c638ef5c7cef882141fc278e5c090",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:58:41.914Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
         },
-        "defaultForUser": {
-          "id": "e7eb44b1-bd8a-460d-98b5-acd0d5bb1756",
-          "name": "Deirdre Clancy",
-          "selfUri": "/api/v2/users/e7eb44b1-bd8a-460d-98b5-acd0d5bb1756"
+        {
+          "messageId": "4561a403327ed6926ff25023d75cc944",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/4561a403327ed6926ff25023d75cc944",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:58:45.586Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
         },
-        "selfUri": "/api/v2/telephony/providers/edges/lines/af097bd2-38bd-4713-95f5-570f2a98cc98"
-      }
-    ],
-    "properties": {},
-    "capabilities": {
-      "provisions": false,
-      "registers": false,
-      "dualRegisters": false,
-      "hardwareIdType": "mac",
-      "allowReboot": false,
-      "noRebalance": false,
-      "noCloudProvisioning": false,
-      "mediaCodecs": ["audio/opus"],
-      "cdm": true
+        {
+          "messageId": "323892c04d16d3bc4a4695c1521c23df",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/323892c04d16d3bc4a4695c1521c23df",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:58:47.165Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "8a20ca2e46aa8230f958615e30a84b7f",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/8a20ca2e46aa8230f958615e30a84b7f",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:59:05.279Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "2a7ab5eebfd7e77fadf017dfd7aeb1bf",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/2a7ab5eebfd7e77fadf017dfd7aeb1bf",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:00:12.948Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "9aa69bdb19fef5b2d8d68bbf992c6a0e",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/9aa69bdb19fef5b2d8d68bbf992c6a0e",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:00:25.536Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "59547d24d3a3b31e73f3069e20ad7719",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/59547d24d3a3b31e73f3069e20ad7719",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:00:38.029Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "33ce0e688b6884aa5ba6325e74bfd0ba",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/33ce0e688b6884aa5ba6325e74bfd0ba",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:11.897Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "9e9cd471ea71898503775de9708b0a35",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/9e9cd471ea71898503775de9708b0a35",
+          "messageStatus": "received",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:35.423Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        }
+      ],
+      "type": "webmessaging"
     },
-    "webRtcUser": {
-      "id": "e7eb44b1-bd8a-460d-98b5-acd0d5bb1756",
-      "name": "Deirdre Clancy",
-      "selfUri": "/api/v2/users/e7eb44b1-bd8a-460d-98b5-acd0d5bb1756"
+    {
+      "id": "c57be9e3-e2d4-406d-b477-934ccf221e9e",
+      "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+      "startTime": "2024-06-26T23:57:09.521Z",
+      "connectedTime": "2024-06-26T23:57:09.551Z",
+      "endTime": "2024-06-26T23:57:10.651Z",
+      "purpose": "workflow",
+      "state": "disconnected",
+      "direction": "inbound",
+      "disconnectType": "transfer",
+      "held": false,
+      "wrapupRequired": false,
+      "mediaRoles": [],
+      "attributes": {},
+      "provider": "PureCloud Messaging",
+      "peer": "256210f7-e6db-456f-bbfc-ee2580301924",
+      "toAddress": {
+        "addressNormalized": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf",
+        "addressRaw": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf"
+      },
+      "fromAddress": {
+        "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+        "addressNormalized": "717e65be-b465-48ba-b31b-14bda4061e91",
+        "addressRaw": "717e65be-b465-48ba-b31b-14bda4061e91"
+      },
+      "messages": [
+        {
+          "messageId": "e4716a6aaa7ad31dd810eaa870848544",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/e4716a6aaa7ad31dd810eaa870848544",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:57:10.408Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        }
+      ],
+      "type": "webmessaging"
     },
-    "selfUri": "/api/v2/telephony/providers/edges/phones/6a01949c-208c-4f60-8277-540b44ff61ad"
-  }
-]
+    {
+      "id": "7f41a6ca-3f6b-4c77-8988-c5213ee19828",
+      "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+      "startTime": "2024-06-26T23:57:10.690Z",
+      "connectedTime": "2024-06-26T23:57:10.714Z",
+      "endTime": "2024-06-26T23:57:14.715Z",
+      "purpose": "acd",
+      "state": "disconnected",
+      "direction": "inbound",
+      "disconnectType": "transfer",
+      "held": false,
+      "wrapupRequired": false,
+      "mediaRoles": [],
+      "queue": {
+        "id": "f14490f9-7e42-4681-8a53-16e495b9e8ac",
+        "selfUri": "/api/v2/routing/queues/f14490f9-7e42-4681-8a53-16e495b9e8ac"
+      },
+      "attributes": {},
+      "provider": "PureCloud Messaging",
+      "peer": "256210f7-e6db-456f-bbfc-ee2580301924",
+      "conversationRoutingData": {
+        "queue": {
+          "id": "f14490f9-7e42-4681-8a53-16e495b9e8ac",
+          "selfUri": "/api/v2/routing/queues/f14490f9-7e42-4681-8a53-16e495b9e8ac"
+        },
+        "priority": 10,
+        "skills": [],
+        "scoredAgents": [],
+        "label": "631f0939-be32-495a-baf9-970abb039192"
+      },
+      "toAddress": {
+        "addressNormalized": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf",
+        "addressRaw": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf"
+      },
+      "fromAddress": {
+        "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+        "addressNormalized": "717e65be-b465-48ba-b31b-14bda4061e91",
+        "addressRaw": "717e65be-b465-48ba-b31b-14bda4061e91"
+      },
+      "messages": [],
+      "type": "webmessaging"
+    },
+    {
+      "id": "21fc3fc5-d430-4336-b5ab-65a7398dfecf",
+      "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+      "startTime": "2024-06-26T23:57:10.796Z",
+      "connectedTime": "2024-06-26T23:57:14.723Z",
+      "endTime": "2024-06-27T00:02:50.988Z",
+      "purpose": "agent",
+      "state": "disconnected",
+      "direction": "inbound",
+      "disconnectType": "transfer",
+      "held": false,
+      "wrapupRequired": true,
+      "wrapupPrompt": "timeout",
+      "mediaRoles": [
+        "full"
+      ],
+      "user": {
+        "id": "55ba2b9d-6856-40ee-8fdc-25fd75760b3e",
+        "selfUri": "/api/v2/users/55ba2b9d-6856-40ee-8fdc-25fd75760b3e"
+      },
+      "queue": {
+        "id": "f14490f9-7e42-4681-8a53-16e495b9e8ac",
+        "selfUri": "/api/v2/routing/queues/f14490f9-7e42-4681-8a53-16e495b9e8ac"
+      },
+      "team": {
+        "id": "bae6365a-0f50-44a5-9a9f-d0db7a685600",
+        "selfUri": "/api/v2/teams/bae6365a-0f50-44a5-9a9f-d0db7a685600"
+      },
+      "attributes": {},
+      "script": {
+        "id": "92b816ed-b105-457c-ab0e-fc450252edcf",
+        "selfUri": "/api/v2/scripts/92b816ed-b105-457c-ab0e-fc450252edcf"
+      },
+      "wrapupTimeoutMs": 300000,
+      "alertingTimeoutMs": 60000,
+      "provider": "PureCloud Messaging",
+      "wrapup": {
+        "code": "3847020a-f8ca-4692-a507-6670b473bed1",
+        "notes": "",
+        "tags": [],
+        "durationSeconds": 10,
+        "endTime": "2024-06-27T00:03:01.389Z"
+      },
+      "peer": "256210f7-e6db-456f-bbfc-ee2580301924",
+      "screenRecordingState": "stopped",
+      "conversationRoutingData": {
+        "priority": 0,
+        "skills": [],
+        "scoredAgents": []
+      },
+      "startAcwTime": "2024-06-27T00:02:50.988Z",
+      "endAcwTime": "2024-06-27T00:03:01.389Z",
+      "toAddress": {
+        "addressNormalized": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf",
+        "addressRaw": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf"
+      },
+      "fromAddress": {
+        "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+        "addressNormalized": "717e65be-b465-48ba-b31b-14bda4061e91",
+        "addressRaw": "717e65be-b465-48ba-b31b-14bda4061e91"
+      },
+      "messages": [
+        {
+          "messageId": "de79afe7dcc7a58abc143d18b990a0ba",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/de79afe7dcc7a58abc143d18b990a0ba",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:57:21.827Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "6af1917390587d6f3966053f71ed2aee",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/6af1917390587d6f3966053f71ed2aee",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:57:53.892Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "e765b45c828b48b7d8a5bb571133cad0",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/e765b45c828b48b7d8a5bb571133cad0",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-26T23:59:25.249Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "816b4e7606d7691e9fe303d073a04957",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/816b4e7606d7691e9fe303d073a04957",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:01:29.315Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "8715e3930957787ec497c8bb498dd7ee",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/8715e3930957787ec497c8bb498dd7ee",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:08.330Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "5030f933b3ef7fcb5a51d548f9f769eb",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/5030f933b3ef7fcb5a51d548f9f769eb",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:42.596Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "ff492ca9f1873db4ee0b9b57ec51d4c3",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/ff492ca9f1873db4ee0b9b57ec51d4c3",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:45.143Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "a81fbab581412c6b0aa3027d1b0f72b0",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/a81fbab581412c6b0aa3027d1b0f72b0",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:49.095Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        }
+      ],
+      "type": "webmessaging"
+    },
+    {
+      "id": "dffbddfe-2023-4ccb-9e27-1939db29619d",
+      "name": "SBC_SMS_Survey_InQueue",
+      "startTime": "2024-06-27T00:02:51.016Z",
+      "connectedTime": "2024-06-27T00:02:51.063Z",
+      "endTime": "2024-06-27T00:07:53.326Z",
+      "purpose": "acd",
+      "state": "disconnected",
+      "direction": "inbound",
+      "disconnectType": "client",
+      "held": false,
+      "wrapupRequired": false,
+      "mediaRoles": [],
+      "queue": {
+        "id": "8a69caa1-dfd2-43e0-9785-06390e67924d",
+        "selfUri": "/api/v2/routing/queues/8a69caa1-dfd2-43e0-9785-06390e67924d"
+      },
+      "attributes": {},
+      "provider": "PureCloud Messaging",
+      "peer": "256210f7-e6db-456f-bbfc-ee2580301924",
+      "conversationRoutingData": {
+        "queue": {
+          "id": "8a69caa1-dfd2-43e0-9785-06390e67924d",
+          "selfUri": "/api/v2/routing/queues/8a69caa1-dfd2-43e0-9785-06390e67924d"
+        },
+        "priority": 0,
+        "skills": [],
+        "scoredAgents": [],
+        "label": "631f0939-be32-495a-baf9-970abb039192"
+      },
+      "toAddress": {
+        "addressNormalized": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf",
+        "addressRaw": "8e2a1a00-1f88-412d-a9cb-ef98e7a840cf"
+      },
+      "fromAddress": {
+        "name": "SBC_HD_BCROS_SPGP_WEBMSG",
+        "addressNormalized": "717e65be-b465-48ba-b31b-14bda4061e91",
+        "addressRaw": "717e65be-b465-48ba-b31b-14bda4061e91"
+      },
+      "messages": [
+        {
+          "messageId": "cc6fe5e476b2bb12933f11268d2ecdf2",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/cc6fe5e476b2bb12933f11268d2ecdf2",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:51.642Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "b373a3b2b992d933089fe65d707277ed",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/b373a3b2b992d933089fe65d707277ed",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:02:53.008Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Structured",
+            "events": [],
+            "content": [
+              {
+                "contentType": "QuickReply"
+              },
+              {
+                "contentType": "QuickReply"
+              },
+              {
+                "contentType": "QuickReply"
+              },
+              {
+                "contentType": "QuickReply"
+              },
+              {
+                "contentType": "QuickReply"
+              }
+            ]
+          }
+        },
+        {
+          "messageId": "9999b9738f8a1cbf625ea53824e774ae",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/9999b9738f8a1cbf625ea53824e774ae",
+          "messageStatus": "delivery-success",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:07:53.154Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Text",
+            "events": [],
+            "content": []
+          }
+        },
+        {
+          "messageId": "b13192cc8dadb4f52b4256a145f1ddd7",
+          "messageURI": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083/messages/b13192cc8dadb4f52b4256a145f1ddd7",
+          "messageStatus": "sent",
+          "messageSegmentCount": 1,
+          "messageTime": "2024-06-27T00:07:53.424Z",
+          "media": [],
+          "stickers": [],
+          "messageMetadata": {
+            "type": "Event",
+            "events": [
+              {
+                "eventType": "Presence",
+                "subType": "Disconnect"
+              }
+            ],
+            "content": []
+          }
+        }
+      ],
+      "type": "webmessaging"
+    },
+    {
+      "id": "13a0262e-ee72-48db-9cbb-c9347c2cb58a",
+      "startTime": "2024-06-27T00:02:51.696Z",
+      "connectedTime": "2024-06-27T00:02:51.726Z",
+      "endTime": "2024-06-27T00:07:53.076Z",
+      "purpose": "botflow",
+      "state": "disconnected",
+      "direction": "inbound",
+      "held": false,
+      "wrapupRequired": false,
+      "mediaRoles": [],
+      "attributes": {},
+      "provider": "PureCloud BotFlow",
+      "conversationRoutingData": {
+        "queue": {
+          "id": "8a69caa1-dfd2-43e0-9785-06390e67924d",
+          "selfUri": "/api/v2/routing/queues/8a69caa1-dfd2-43e0-9785-06390e67924d"
+        },
+        "priority": 0,
+        "skills": [],
+        "scoredAgents": []
+      },
+      "messages": [],
+      "type": "webmessaging"
+    }
+  ],
+  "otherMediaUris": [],
+  "recentTransfers": [
+    {
+      "id": "a695509f-e717-4aac-969f-71f6b9e13024",
+      "state": "Complete",
+      "dateIssued": "2024-06-26T23:57:10.636Z",
+      "initiator": {},
+      "modifiedBy": {},
+      "destination": {},
+      "transferType": "Unattended"
+    },
+    {
+      "id": "c450f5cc-33ab-49c7-90d5-7a2d3caddec3",
+      "state": "Complete",
+      "dateIssued": "2024-06-26T23:57:10.752Z",
+      "initiator": {},
+      "modifiedBy": {},
+      "destination": {
+        "userId": "55ba2b9d-6856-40ee-8fdc-25fd75760b3e"
+      },
+      "transferType": "Attended"
+    },
+    {
+      "id": "7fe70af2-f1ff-4eed-a2bc-cca230a799c1",
+      "state": "Complete",
+      "dateIssued": "2024-06-27T00:02:50.973Z",
+      "initiator": {
+        "userId": "55ba2b9d-6856-40ee-8fdc-25fd75760b3e"
+      },
+      "modifiedBy": {},
+      "destination": {},
+      "transferType": "Unattended"
+    }
+  ],
+  "utilizationLabelId": "631f0939-be32-495a-baf9-970abb039192",
+  "selfUri": "/api/v2/conversations/messages/4ce21b8f-d72d-43c6-8771-149b12ff9083"
+}

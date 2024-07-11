@@ -14,14 +14,9 @@ const getIds = (arr) => {
     // idsArray.push(arr[i].id);
 
     // Find autoanswer users
-    // if (arr[i].acdAutoAnswer) {
-    //     idsArray.push({id: arr[i].id, acdAutoAnswer: false});
-    //   }
-
-    // Find division members
-    if (arr[i].division.name === "SBC_BCROS_PROD") {
-      idsArray.push({id: arr[i].id, "joined": false})
-    }
+    if (arr[i].acdAutoAnswer) {
+        idsArray.push({id: arr[i].id, acdAutoAnswer: false});
+      }
   }
   return idsArray;
 };
@@ -46,6 +41,7 @@ client
     // console.log(data.total);
     // getIds(data.entities);
     console.log(getIds(data.entities));
+    // console.log(getIds(data.entities));
     return getIds(data.entities);
   })
   .catch((err) => {

@@ -1,7 +1,7 @@
 import { platformClient, client, orgOauth } from "./config.js";
 
 // Choose the organization: DEV, SBC, SBCICC, SDO, ODB
-const { clientId, clientSecret } = orgOauth.SBC;
+const { clientId, clientSecret } = orgOauth.SBCICC;
 
 // Create API instance
 const routingApi = new platformClient.RoutingApi();
@@ -10,8 +10,8 @@ const dataArray = [];
 
 // let idObj = {}
 let idObj = {
-  id: "",
-  name: "",
+  // id: "",
+  // name: "",
 };
 
 const getIds = (arr) => {
@@ -28,8 +28,12 @@ const getIds = (arr) => {
   //   }
   // }
   arr.map((item) => {
-    dataArray.push(item.id);
-    // dataArray.push({ id: item.id });
+    // dataArray.push(item.name);
+    dataArray.push({ 
+      id: item.id, 
+      name: item.name, 
+      division: { id: "80820210-8dce-491b-9c11-a2f3118e3fe2" } 
+    });
   });
   console.log(dataArray);
   return dataArray;
@@ -38,17 +42,18 @@ const getIds = (arr) => {
 const getNames = (arr) => {
   arr.map((item) => {
     // dataArray.push(item.name);
-    console.log(item.name);
+    // console.log(item.name);
   });
   // console.log(dataArray);
   // return dataArray;
 };
 
-let queueId = "a70e97d5-9c68-4c04-b60d-87fb0d846bb2";
+let queueId = "e3878ef7-beee-4682-a7b9-6495babb6102";
 
 let opts = {
   pageSize: 500, // Number | Page size
   pageNumber: 1, // Number | Page number
+  // divisionId: ["b6d361db-13a9-4c98-9373-3729e1d8f1cf"]
 };
 
 client
@@ -57,6 +62,7 @@ client
     return routingApi.getRoutingQueueWrapupcodes(queueId, opts);
   })
   .then((data) => {
+    // console.log(data.entities);
     getIds(data.entities);
   })
   .catch((err) => {

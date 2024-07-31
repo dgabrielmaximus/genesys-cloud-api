@@ -1,6 +1,6 @@
-import { platformClient, client, orgOauth } from "./config.js";
+import { platformClient, client, orgOauth } from "../../config.js";
 
-// Choose the organization: DEV, SBC, ICC, SDO, ODB
+// Choose the organization: DEV, SBC, SBCICC, SDO, ODB
 const { clientId, clientSecret } = orgOauth.ICC;
 
 const groupsApi = new platformClient.GroupsApi();
@@ -9,26 +9,9 @@ const dataArray = [];
 
 const getIds = (arr) => {
   arr.map((object) => {
-    if (object.name.includes("BCROS") && object.name.includes("UAT")) {
-    dataArray.push({ id: object.id, name: object.name });
+    if (object.name.includes("BCROS") && !object.name.includes("UAT")) {
+    dataArray.push(object);
     }
-    // let newOwners = object.owners.map((owner) => {
-    //   return owner.id
-    // })
-    // console.log(JSON.stringify({
-    //   id: object.id,
-    //   name: object.name,
-    //   state: object.state,
-    //   version: object.version,
-    //   type: object.type,
-    //   addresses: object.addresses,
-    //   rulesVisible: object.rulesVisible,
-    //   visibility: "members",
-    //   chat: object.chat,
-    //   rolesEnabled: object.rolesEnabled,
-    //   ownerIds: newOwners.concat("ebdc2eb8-25a4-469e-adb0-a0bfd318aede"), 
-      // ownerIds: [...object.owners?.id, "ebdc2eb8-25a4-469e-adb0-a0bfd318aede"],
-    // }) + ",")
   });
   return dataArray;
 };
@@ -47,8 +30,20 @@ client
     return groupsApi.getGroups(opts);
   })
   .then((data) => {
-    console.log(getIds(data.entities));
     return getIds(data.entities);
+  }).then((groupData) => {
+    let promises = groupData.map((group) => {
+      let body = {
+        ...group,
+        name: group.name.replace("BCROS", "BCRDS")
+      };
+      console.log(body)
+      // return groupsApi.putGroup(group.id, {body});
+    });
+    return Promise.all(promises).then(() => {
+      console.log("Success! Groups have been modified.");
+      // console.log(promises);
+    });
   })
   .catch((err) => {
     console.log("There was a failure calling getGroups");

@@ -1,7 +1,7 @@
 import { platformClient, client, orgOauth } from "./config.js";
 
 // Choose the organization: DEV, SBC, SBCICC, SDO, ODB
-const { clientId, clientSecret } = orgOauth.SBC;
+const { clientId, clientSecret } = orgOauth.SBCICC;
 
 const objectsApi = new platformClient.ObjectsApi();
 

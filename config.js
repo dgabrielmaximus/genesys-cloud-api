@@ -12,9 +12,9 @@ const orgOauth = {
     clientId: process.env.CLIENT_ID_SBC,
     clientSecret: process.env.CLIENT_SECRET_SBC,
   },
-  SBCICC: {
-    clientId: process.env.CLIENT_ID_SBCICC,
-    clientSecret: process.env.CLIENT_SECRET_SBCICC,
+  ICC: {
+    clientId: process.env.CLIENT_ID_ICC,
+    clientSecret: process.env.CLIENT_SECRET_ICC,
   },
   ODB: {
     clientId: process.env.CLIENT_ID_ODB,

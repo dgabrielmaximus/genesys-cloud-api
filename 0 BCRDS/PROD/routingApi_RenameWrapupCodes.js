@@ -24,7 +24,7 @@ let opts = {
   // "sortOrder": "ascending", // String | Sort order
   "name": "*BCROS*", // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)
   // "id": ["id_example"], // [String] | Filter by wrapup code ID(s)
-  divisionId: ["6a9d15ae-96d9-4cc0-8379-a97b7b1c479b"], // [String] | Filter by division ID(s)
+  divisionId: [ division.PROD ], // [String] | Filter by division ID(s)
 };
 
 client

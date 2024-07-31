@@ -33,8 +33,8 @@ client
   .then((data) => {
     return getIds(data.entities);
   })
-  .then((scheduleGroupData) => {
-    let promises = scheduleGroupData.map((body) => {
+  .then((scheduleData) => {
+    let promises = scheduleData.map((body) => {
       let newBody = {
         ...body,
         name: body.name.replace("BCROS", "BCRDS"),

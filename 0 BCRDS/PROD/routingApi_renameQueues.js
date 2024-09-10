@@ -1,4 +1,5 @@
 import { platformClient, client, orgOauth } from "../../config.js";
+import { division } from "./prod.js";
 
 // Choose the organization: DEV, SBC, SBCICC, SDO, ODB
 const { clientId, clientSecret } = orgOauth.ICC;
@@ -20,9 +21,7 @@ let opts = {
   sortOrder: "asc", // String | Note: results are sorted by name.
   name: "*BCROS*", // String | Include only queues with the given name (leading and trailing asterisks allowed)
   // "id": ["id_example"], // [String] | Include only queues with the specified ID(s)
-  divisionId: [
-    "6a9d15ae-96d9-4cc0-8379-a97b7b1c479b",
-  ], // [String] | Include only queues in the specified division ID(s)
+  divisionId: [ division.PROD ], // [String] | Include only queues in the specified division ID(s)
   // "peerId": ["peerId_example"], // [String] | Include only queues with the specified peer ID(s)
   // "cannedResponseLibraryId": "cannedResponseLibraryId_example", // String | Include only queues explicitly associated with the specified canned response library ID
   // "hasPeer": true // Boolean | Include only queues with a peer ID
@@ -45,7 +44,7 @@ client
         name: body.name.replace("BCROS", "BCRDS"),
       };
       console.log(newBody.name)
-      // return routingApi.putRoutingQueue(body.id, newBody);
+      return routingApi.putRoutingQueue(body.id, newBody);
     });
 
     return Promise.all(promises).then(() => {

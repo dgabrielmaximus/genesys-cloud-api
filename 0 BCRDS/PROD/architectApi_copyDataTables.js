@@ -40,7 +40,7 @@ client
         ...body,
         name: body.name.replace("BCROS", "BCRDS"),
       };
-      console.log(newBody.name)
+      console.log(newBody)
       return architectApi.postFlowsDatatables(newBody);
     });
 

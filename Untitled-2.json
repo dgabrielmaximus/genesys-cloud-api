@@ -1,8 +1,87 @@
-[
-  { "id": "6a4921d3-360d-41f5-aa55-0924719efd13", "acdAutoAnswer": false },
-  { "id": "d089116c-ce69-4733-8ce5-5073560d0c6a", "acdAutoAnswer": false },
-  { "id": "fa259cba-8361-442a-8aa1-1073d80ac371", "acdAutoAnswer": false },
-  { "id": "f15a97c2-8114-4d35-b8c1-a76afa97b0c3", "acdAutoAnswer": false },
-  { "id": "11ac6575-7a05-463f-93bd-c4a5cffb2216", "acdAutoAnswer": false },
-  { "id": "cfd2b939-cc30-4257-8a20-a206fe4f92cd", "acdAutoAnswer": false }
-]
+{
+  "id": "93eb6035-be74-456c-84b8-774b2745094a",
+  "name": "SBC_VBV_BAT",
+  "division": {
+    "id": "27867234-2e90-4221-a81a-ee2823d3628e",
+    "name": "SBC_BAT",
+    "selfUri": "/api/v2/authorization/divisions/27867234-2e90-4221-a81a-ee2823d3628e"
+  },
+  "description": "Verify By Video",
+  "dateCreated": "2024-03-07T17:22:43.492Z",
+  "dateModified": "2024-05-16T14:58:22.618Z",
+  "modifiedBy": "43915853-6810-46e2-9744-55cf87783acf",
+  "createdBy": "e8fb4a2f-83c6-4c1b-b81e-54ba6e4c5eac",
+  "memberCount": 26,
+  "userMemberCount": 0,
+  "joinedMemberCount": 21,
+  "mediaSettings": {
+    "call": {
+      "alertingTimeoutSeconds": 16,
+      "serviceLevel": {
+        "percentage": 0.8,
+        "durationMs": 20000
+      }
+    },
+    "callback": {
+      "alertingTimeoutSeconds": 30,
+      "serviceLevel": {
+        "percentage": 0.8,
+        "durationMs": 20000
+      },
+      "enableAutoDialAndEnd": false,
+      "autoDialDelaySeconds": 300,
+      "autoEndDelaySeconds": 300
+    },
+    "chat": {
+      "alertingTimeoutSeconds": 30,
+      "serviceLevel": {
+        "percentage": 0.8,
+        "durationMs": 20000
+      }
+    },
+    "email": {
+      "alertingTimeoutSeconds": 300,
+      "serviceLevel": {
+        "percentage": 0.8,
+        "durationMs": 86400000
+      }
+    },
+    "message": {
+      "alertingTimeoutSeconds": 30,
+      "serviceLevel": {
+        "percentage": 0.8,
+        "durationMs": 20000
+      }
+    }
+  },
+  "scoringMethod": "TimestampAndPriority",
+  "acwSettings": {
+    "wrapupPrompt": "MANDATORY_TIMEOUT",
+    "timeoutMs": 60000
+  },
+  "skillEvaluationMethod": "NONE",
+  "memberGroups": [
+    {
+      "id": "e6a1236b-2b1a-41af-ab50-3541f28d648d",
+      "name": "SBC_VBV_TEST",
+      "type": "GROUP",
+      "memberCount": 26,
+      "selfUri": "/api/v2/groups/e6a1236b-2b1a-41af-ab50-3541f28d648d"
+    }
+  ],
+  "queueFlow": {
+    "id": "cf20fe20-84ff-49d1-b44e-e1a537257c41",
+    "name": "SBC_VBV_INQUEUE_BAT",
+    "selfUri": "/api/v2/flows/cf20fe20-84ff-49d1-b44e-e1a537257c41"
+  },
+  "autoAnswerOnly": false,
+  "callingPartyName": "Service BC",
+  "defaultScripts": {
+    "CALL": {
+      "id": "9851b43b-9de7-4600-aa21-96ff0c540410",
+      "selfUri": "/api/v2/scripts/9851b43b-9de7-4600-aa21-96ff0c540410"
+    }
+  },
+  "suppressInQueueCallRecording": true,
+  "selfUri": "/api/v2/routing/queues/93eb6035-be74-456c-84b8-774b2745094a"
+}

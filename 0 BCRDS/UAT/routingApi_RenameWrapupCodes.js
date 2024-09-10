@@ -1,5 +1,5 @@
 import { platformClient, client, orgOauth } from "../../config.js";
-
+import { division } from "./uat.js";
 // Choose the organization: DEV, SBC, SBCICC, SDO, ODB
 const { clientId, clientSecret } = orgOauth.ICC;
 
@@ -11,8 +11,12 @@ let idObj = {};
 
 const getIds = (arr) => {
   for (let i = 0; i < arr.length; i++) {
-    idObj = { id: arr[i].id, name: arr[i].name };
-    dataArray.push(idObj);
+    if (arr[i].name.includes("UAT")) {
+      idObj = { id: arr[i].id, name: arr[i].name };
+      dataArray.push(idObj);
+    }
+    // idObj = { id: arr[i].id, name: arr[i].name };
+    // dataArray.push(idObj);
   }
   return dataArray;
 };
@@ -24,7 +28,7 @@ let opts = {
   // "sortOrder": "ascending", // String | Sort order
   "name": "*BCROS*", // String | Wrapup code's name ('Sort by' param is ignored unless this field is provided)
   // "id": ["id_example"], // [String] | Filter by wrapup code ID(s)
-  divisionId: [ division.UAT, division.TRN ], // [String] | Filter by division ID(s)
+  // divisionId: [ division.UAT, division.TRN ], // [String] | Filter by division ID(s)
 };
 
 client

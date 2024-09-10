@@ -1,11 +1,11 @@
 import { platformClient, client, orgOauth } from "../config.js";
 
 // Choose the organization: DEV, SBC, SBCICC, SDO, ODB
-const { clientId, clientSecret } = orgOauth.SBC;
+const { clientId, clientSecret } = orgOauth.DEV;
 
 const telephonyApi = new platformClient.TelephonyProvidersEdgeApi();
 
-let userId = "43915853-6810-46e2-9744-55cf87783acf"
+let userId = "72867fe3-c269-4da6-914e-e0f2ea740c47"
 
 let opts = { 
   "webRtcUserId": userId, // String | Filter by webRtcUser.id

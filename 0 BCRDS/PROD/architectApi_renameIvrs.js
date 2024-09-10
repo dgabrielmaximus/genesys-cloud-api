@@ -22,7 +22,7 @@ let opts = {
   "sortBy": "name", // String | Sort by
   "sortOrder": "ASC", // String | Sort order
   "name": "*BCROS*", // String | Name of the Schedule Group to filter by.
-  // "divisionId": [ division.UAT, division.TRN ] // [String] | List of divisionIds on which to filter.
+  "divisionId": [ division.PROD ] // [String] | List of divisionIds on which to filter.
 };
 
 client
@@ -39,8 +39,8 @@ client
         ...body,
         name: body.name.replace("BCROS", "BCRDS"),
       };
-      console.log(newBody.name)
-      // return architectApi.putArchitectIvr(body.id, newBody);
+      console.log(newBody)
+      return architectApi.putArchitectIvr(body.id, newBody);
     });
 
     return Promise.all(promises).then(() => {

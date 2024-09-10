@@ -40,7 +40,7 @@ client
         name: body.name.replace("BCROS", "BCRDS"),
       };
       console.log(newBody.name)
-      // return architectApi.putArchitectSchedulegroup(body.id, newBody);
+      return architectApi.putArchitectSchedulegroup(body.id, newBody);
     });
 
     return Promise.all(promises).then(() => {

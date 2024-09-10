@@ -38,7 +38,7 @@ client
         name: group.name.replace("BCROS", "BCRDS")
       };
       console.log(body)
-      // return groupsApi.putGroup(group.id, {body});
+      return groupsApi.putGroup(group.id, {body});
     });
     return Promise.all(promises).then(() => {
       console.log("Success! Groups have been modified.");

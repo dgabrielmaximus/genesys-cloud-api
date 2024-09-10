@@ -1,4 +1,5 @@
 import { platformClient, client, orgOauth } from "../../config.js";
+import { division } from "./uat.js";
 
 // Choose the organization: DEV, SBC, SBCICC, SDO, ODB
 const { clientId, clientSecret } = orgOauth.ICC;
